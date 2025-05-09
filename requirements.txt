@@ -1,0 +1,8 @@
+requests
+pandas
+beautifulsoup4
+ijson
+numpy
+pathlib
+plotly
+matplotlib
