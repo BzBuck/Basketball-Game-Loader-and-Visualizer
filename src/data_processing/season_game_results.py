@@ -30,7 +30,10 @@ def get_allgames(
     params = {"Season": season, "SeasonType": seasontype}
     resp   = requests.get(get_games_url,
                           params=params,
-                          headers={"accept": "application/json"})
+                          headers={
+                              "accept": "application/json",
+                              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+                          })
     resp.raise_for_status()
     games  = resp.json().get("results", [])
 

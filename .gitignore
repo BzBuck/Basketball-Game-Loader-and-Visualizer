@@ -1,0 +1,19 @@
+# Downloaded/generated data (regenerate via src/data_processing/download_data.py)
+SavedData/
+
+# Generated visualization output (regenerate via scripts in src/visualization/)
+graphs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+build/
+dist/
+
+# macOS
+.DS_Store

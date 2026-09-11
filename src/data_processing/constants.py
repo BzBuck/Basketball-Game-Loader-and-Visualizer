@@ -1,4 +1,4 @@
-YEAR = 2025
+YEAR = 2026
 SEASON = f"{YEAR - 1}-{YEAR % 100:02}" 
 
 SEASON_TYPE = "Playoffs" # "Playoffs" or "Regular Season"

@@ -38,6 +38,7 @@ def merge_jsons(input_folder, output_path):
         merged[name] = data
     
     # write merged JSON
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
 

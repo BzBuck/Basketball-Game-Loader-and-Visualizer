@@ -8,6 +8,8 @@ The tool is designed for basketball fans, statistics enthusiasts, and anyone int
 ---
 # Usage
 
+Season/year config (`YEAR`, `SEASON_TYPE`) lives in `src/data_processing/constants.py`. `src/visualization/constants.py` is a symlink to that same file, so it only needs to be edited once — both the data processing and visualization scripts pick up the change automatically.
+
 To download all of data needed to run everything
 
 `python src/data_processing/download_data.py`
@@ -38,14 +40,7 @@ These files will be generated in the graphs folder.
 ├── requirements.txt
 └── src
     ├── data_processing
-    │   ├── __pycache__
-    │   │   ├── constants.cpython-311.pyc
-    │   │   ├── get_games.cpython-311.pyc
-    │   │   ├── merge_json.cpython-311.pyc
-    │   │   ├── preprocessing.cpython-311.pyc
-    │   │   ├── season_game_results.cpython-311.pyc
-    │   │   └── utils.cpython-311.pyc
-    │   ├── constants.py
+    │   ├── constants.py            # single source of truth for YEAR/SEASON_TYPE/paths
     │   ├── download_data.py
     │   ├── get_games.py
     │   ├── merge_json.py
@@ -54,16 +49,12 @@ These files will be generated in the graphs folder.
     │   └── utils.py
     └── visualization
         ├── 3D_team_comparison.py
-        ├── __pycache__
-        │   ├── calculation.cpython-311.pyc
-        │   └── constants.cpython-311.pyc
         ├── calculation.py
-        ├── constants.py
+        ├── constants.py -> ../data_processing/constants.py  # symlink, not a copy
         ├── interest_ratings.py
         └── interest_weighted.py
 
 ```
-9 directories, 30 files
 
 ---
 
